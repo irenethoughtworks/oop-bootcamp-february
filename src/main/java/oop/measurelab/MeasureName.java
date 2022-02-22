@@ -1,4 +1,4 @@
-package oop;
+package oop.measurelab;
 
 public enum MeasureName {
     LITER,

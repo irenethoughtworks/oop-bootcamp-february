@@ -1,8 +1,9 @@
-package oop;
+package oop.measurelab;
 
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
+import oop.measurelab.*;
 import org.testng.annotations.Test;
 
 public class ComparatorTest {

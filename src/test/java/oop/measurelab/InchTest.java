@@ -1,7 +1,9 @@
-package oop;
+package oop.measurelab;
 
 import static org.testng.Assert.assertEquals;
 
+import oop.measurelab.Inch;
+import oop.measurelab.Meter;
 import org.testng.annotations.Test;
 
 public class InchTest {

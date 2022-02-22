@@ -1,4 +1,4 @@
-package oop;
+package oop.measurelab;
 
 import java.util.HashMap;
 import java.util.Map;

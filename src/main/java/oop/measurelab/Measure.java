@@ -1,16 +1,9 @@
-package oop;
+package oop.measurelab;
 
-import java.util.HashMap;
 import java.util.Map;
 
 public abstract class Measure {
 
-    private final Map<MeasureName, Double> conversion = new HashMap<>();
-    {
-        conversion.put(MeasureName.CENTIMETER, 100.);
-        conversion.put(MeasureName.INCH, 39.37008);
-        conversion.put(MeasureName.METER, 1d);
-    }
     private double value;
     private MeasureName name;
 
@@ -27,7 +20,7 @@ public abstract class Measure {
     }
 
     public double to(MeasureName name) {
-        return (conversion.get(name)/conversion.get(this.name)) * this.value;
+        return (getConversion().get(name)/getConversion().get(this.name)) * this.value;
     }
 
     abstract Map<MeasureName, Double> getConversion();
