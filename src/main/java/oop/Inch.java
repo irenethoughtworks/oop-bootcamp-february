@@ -5,9 +5,9 @@ import java.util.Map;
 
 public class Inch implements Measure {
 
-    private final Map<String, Double> conversion = new HashMap<>();
+    private final Map<MeasureType, Double> conversion = new HashMap<>();
     {
-        conversion.put("yard", 0.0278);
+        conversion.put(MeasureType.YARD, 0.0278);
     }
 
     private double value;
@@ -17,8 +17,8 @@ public class Inch implements Measure {
     }
 
     @Override
-    public String getName() {
-        return "inch";
+    public MeasureType getName() {
+        return MeasureType.INCH;
     }
 
     @Override
@@ -27,7 +27,7 @@ public class Inch implements Measure {
     }
 
     @Override
-    public double to(String measureName) {
+    public double to(MeasureType measureName) {
         return conversion.get(measureName) * this.value;
     }
 }

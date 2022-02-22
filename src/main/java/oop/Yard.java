@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class Yard implements Measure {
 
-    private final Map<String, Double> conversion = new HashMap<>();
+    private final Map<MeasureType, Double> conversion = new HashMap<>();
 
     private double value;
 
@@ -14,8 +14,8 @@ public class Yard implements Measure {
     }
 
     @Override
-    public String getName() {
-        return "yard";
+    public MeasureType getName() {
+        return MeasureType.YARD;
     }
 
     @Override
@@ -24,7 +24,7 @@ public class Yard implements Measure {
     }
 
     @Override
-    public double to(String measureName) {
+    public double to(MeasureType measureName) {
         return conversion.get(measureName) * this.value;
     }
 }

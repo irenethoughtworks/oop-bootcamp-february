@@ -2,10 +2,10 @@ package oop;
 
 public interface Measure {
 
-    String getName();
+    MeasureType getName();
 
     double getValue();
 
-    double to(String measureName);
+    double to(MeasureType measureName);
 
 }

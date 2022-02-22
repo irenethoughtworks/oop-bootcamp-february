@@ -34,4 +34,11 @@ public class DistanceComparatorTest {
         Centimeter centimeters = new Centimeter(200);
         assertTrue(DistanceComparator.areEquivalent(meters, centimeters));
     }
+
+    @Test
+    public void itShouldReturnTrueIfGallonsAndLitersAreEquivalent() {
+        Gallon gallons = new Gallon(4);
+        Liter liters = new Liter(15.1416);
+        assertTrue(DistanceComparator.areEquivalent(gallons, liters));
+    }
 }
