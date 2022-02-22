@@ -3,28 +3,16 @@ package oop;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Liter implements Measure {
+public class Liter extends VolumeMeasure {
 
   private final Map<MeasureType, Double> conversion = new HashMap<>();
 
-  private double value;
-
   public Liter(double value) {
-    this.value = value;
+    super(MeasureType.LITER, value);
   }
 
   @Override
-  public MeasureType getName() {
-    return MeasureType.LITER;
-  }
-
-  @Override
-  public double getValue() {
-    return this.value;
-  }
-
-  @Override
-  public double to(MeasureType measureName) {
-    return conversion.get(measureName) * this.value;
+  Map<MeasureType, Double> getConversion() {
+    return conversion;
   }
 }
