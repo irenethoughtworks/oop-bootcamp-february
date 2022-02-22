@@ -11,7 +11,7 @@ public class ChanceTest {
     Chance chance = new Chance();
     double eventA = 0.1;
     double eventB = 0.2;
-    assertEquals(chance.calculateChanceOfTwoEvents(eventA, eventB), 0.02);
+    assertEquals(chance.calculateChanceOfTwoEvents(eventA, eventB), 0.02, 0.1);
   }
 
   @Test
@@ -19,6 +19,6 @@ public class ChanceTest {
     Chance chance = new Chance();
     double eventA = 0.1;
     double eventB = 0.15;
-    assertEquals(chance.calculateChanceOfTwoEvents(eventA, eventB), 0.03);
+    assertEquals(chance.calculateChanceOfTwoEvents(eventA, eventB), 0.015);
   }
 }
