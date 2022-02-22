@@ -3,7 +3,7 @@ package oop;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Yard extends DistanceMeasure {
+public class Yard extends Distance {
 
     private final Map<MeasureName, Double> conversion = new HashMap<>();
 

@@ -3,7 +3,7 @@ package oop;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Gallon extends VolumeMeasure {
+public class Gallon extends Volume {
 
   private final Map<MeasureName, Double> conversion = new HashMap<>();
   {

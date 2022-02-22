@@ -3,7 +3,7 @@ package oop;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Liter extends VolumeMeasure {
+public class Liter extends Volume {
 
   private final Map<MeasureName, Double> conversion = new HashMap<>();
 

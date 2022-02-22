@@ -1,14 +1,14 @@
 package oop;
 
-public class DistanceComparator {
+public class Comparator {
 
   public static final double PRECISION = 0.0001;
 
-  public static boolean distancesAreEqual(DistanceMeasure measure1, DistanceMeasure measure2) {
+  public static boolean distancesAreEqual(Distance measure1, Distance measure2) {
     return areMeasuresEqual(measure1, measure2);
   }
 
-  public static boolean volumesAreEqual(VolumeMeasure measure1, VolumeMeasure measure2) {
+  public static boolean volumesAreEqual(Volume measure1, Volume measure2) {
     return areMeasuresEqual(measure1, measure2);
   }
 

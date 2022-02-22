@@ -3,7 +3,7 @@ package oop;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Inch extends DistanceMeasure {
+public class Inch extends Distance {
 
     private final Map<MeasureName, Double> conversion = new HashMap<>();
     {
@@ -17,5 +17,9 @@ public class Inch extends DistanceMeasure {
     @Override
     Map<MeasureName, Double> getConversion() {
         return conversion;
+    }
+
+    public Inch add(Inch other) {
+        return new Inch(this.getValue() + other.getValue());
     }
 }

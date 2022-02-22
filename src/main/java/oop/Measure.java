@@ -1,6 +1,7 @@
 package oop;
 
 import java.util.Map;
+import java.util.Objects;
 
 public abstract class Measure {
 
@@ -25,4 +26,17 @@ public abstract class Measure {
 
     abstract Map<MeasureName, Double> getConversion();
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Measure measure = (Measure) o;
+        return Double.compare(measure.value, value) == 0 &&
+            name == measure.name;
+    }
 }
+
