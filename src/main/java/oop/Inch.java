@@ -8,6 +8,7 @@ public class Inch extends Distance {
     private final Map<MeasureName, Double> conversion = new HashMap<>();
     {
         conversion.put(MeasureName.YARD, 0.0278);
+        conversion.put(MeasureName.INCH, 1d);
     }
 
     public Inch(double value) {
@@ -19,7 +20,7 @@ public class Inch extends Distance {
         return conversion;
     }
 
-    public Inch add(Inch other) {
-        return new Inch(this.getValue() + other.getValue());
+    public Inch add(Distance other) {
+        return new Inch(other.to(this.getName()) + this.getValue());
     }
 }
