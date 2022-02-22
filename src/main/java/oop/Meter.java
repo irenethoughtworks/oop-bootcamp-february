@@ -5,17 +5,17 @@ import java.util.Map;
 
 public class Meter extends DistanceMeasure {
 
-  private final Map<MeasureType, Double> conversion = new HashMap<>();
+  private final Map<MeasureName, Double> conversion = new HashMap<>();
   {
-    conversion.put(MeasureType.CENTIMETER, 100.);
+    conversion.put(MeasureName.CENTIMETER, 100.);
   }
 
   public Meter(double value) {
-    super(MeasureType.METER, value);
+    super(MeasureName.METER, value);
   }
 
   @Override
-  Map<MeasureType, Double> getConversion() {
+  Map<MeasureName, Double> getConversion() {
     return conversion;
   }
 }

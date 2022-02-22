@@ -5,14 +5,14 @@ import java.util.Map;
 
 public class Liter extends VolumeMeasure {
 
-  private final Map<MeasureType, Double> conversion = new HashMap<>();
+  private final Map<MeasureName, Double> conversion = new HashMap<>();
 
   public Liter(double value) {
-    super(MeasureType.LITER, value);
+    super(MeasureName.LITER, value);
   }
 
   @Override
-  Map<MeasureType, Double> getConversion() {
+  Map<MeasureName, Double> getConversion() {
     return conversion;
   }
 }

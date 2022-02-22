@@ -1,6 +1,6 @@
 package oop;
 
-public enum MeasureType {
+public enum MeasureName {
     LITER,
     METER,
     INCH,

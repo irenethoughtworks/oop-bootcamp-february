@@ -5,14 +5,14 @@ import java.util.Map;
 
 public class Yard extends DistanceMeasure {
 
-    private final Map<MeasureType, Double> conversion = new HashMap<>();
+    private final Map<MeasureName, Double> conversion = new HashMap<>();
 
     public Yard(double value) {
-        super(MeasureType.YARD, value);
+        super(MeasureName.YARD, value);
     }
 
     @Override
-    Map<MeasureType, Double> getConversion() {
+    Map<MeasureName, Double> getConversion() {
         return conversion;
     }
 }

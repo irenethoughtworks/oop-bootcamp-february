@@ -5,17 +5,17 @@ import java.util.Map;
 
 public class Gallon extends VolumeMeasure {
 
-  private final Map<MeasureType, Double> conversion = new HashMap<>();
+  private final Map<MeasureName, Double> conversion = new HashMap<>();
   {
-    conversion.put(MeasureType.LITER, 3.7854);
+    conversion.put(MeasureName.LITER, 3.7854);
   }
 
   public Gallon(double value) {
-    super(MeasureType.GALLON, value);
+    super(MeasureName.GALLON, value);
   }
 
   @Override
-  Map<MeasureType, Double> getConversion() {
+  Map<MeasureName, Double> getConversion() {
     return conversion;
   }
 

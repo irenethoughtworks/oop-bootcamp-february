@@ -5,24 +5,24 @@ import java.util.Map;
 public abstract class Measure {
 
     private double value;
-    private MeasureType name;
+    private MeasureName name;
 
-    public Measure(MeasureType name, double value) {
+    public Measure(MeasureName name, double value) {
         this.name = name;
         this.value = value;
     }
 
-    public MeasureType getName() {
+    public MeasureName getName() {
         return this.name;
     }
     public double getValue() {
         return this.value;
     }
 
-    public double to(MeasureType name) {
+    public double to(MeasureName name) {
         return getConversion().get(name) * this.value;
     }
 
-    abstract Map<MeasureType, Double> getConversion();
+    abstract Map<MeasureName, Double> getConversion();
 
 }
