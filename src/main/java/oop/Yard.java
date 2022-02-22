@@ -6,9 +6,6 @@ import java.util.Map;
 public class Yard implements Measure {
 
     private final Map<String, Double> conversion = new HashMap<>();
-    {
-        conversion.put("inch", 1/0.0278);
-    }
 
     private double value;
 
