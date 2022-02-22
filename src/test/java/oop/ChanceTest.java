@@ -2,7 +2,6 @@ package oop;
 
 import static org.testng.Assert.assertEquals;
 
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class ChanceTest {
