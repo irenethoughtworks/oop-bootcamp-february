@@ -5,7 +5,11 @@ import java.util.List;
 
 public class ParkingLot {
 
-  private List<String> cars = new ArrayList();
+  private List<String> cars;
+
+  public ParkingLot() {
+    cars = new ArrayList<>();
+  }
 
   public boolean park(String car) {
     cars.add(car);
