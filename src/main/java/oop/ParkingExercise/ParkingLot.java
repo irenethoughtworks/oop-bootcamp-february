@@ -5,25 +5,33 @@ import java.util.List;
 
 public class ParkingLot {
 
-  private List<String> cars;
-  private boolean isFull;
+  private final List<String> cars;
+  private static final int MAX_CAPACITY = 3;
+  private boolean isFull = false;
+  private final String name;
 
-  public ParkingLot() {
+  public ParkingLot(String name) {
     cars = new ArrayList<>();
-    isFull = false;
+    this.name = name;
   }
 
   public boolean park(String car) {
-    if (isFull) {
-      return false;
-    } else {
-      cars.add(car);
-      return true;
+    return !isFull && addCarAndUpdateSize(car);
+  }
+
+  private boolean addCarAndUpdateSize(String car) {
+    cars.add(car);
+    if (cars.size() == MAX_CAPACITY) {
+      isFull = true;
     }
+    return true;
   }
 
   public String retrieveCar(String car) {
     cars.remove(car);
+    if(cars.size() < MAX_CAPACITY) {
+      isFull = false;
+    }
     return car;
   }
 

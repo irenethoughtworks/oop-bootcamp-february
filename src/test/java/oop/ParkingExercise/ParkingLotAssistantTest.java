@@ -1,5 +1,6 @@
 package oop.ParkingExercise;
 
+import java.util.List;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
@@ -11,9 +12,9 @@ public class ParkingLotAssistantTest {
 
     @Test
     public void itShouldParkACarInTheFirstAvailableParkingLot() {
-        ParkingLotAssistant parkingLotAssistant = new ParkingLotAssistant();
+        List<ParkingLot> parkingLots = List.of(new ParkingLot("parkingA"), new ParkingLot("ParkingB"), new ParkingLot(PARKING_LOT));
+        ParkingLotAssistant parkingLotAssistant = new ParkingLotAssistant(parkingLots);
 
         assertEquals(parkingLotAssistant.park(MY_CAR), PARKING_LOT);
-
     }
 }
