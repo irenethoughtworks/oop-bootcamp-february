@@ -1,22 +1,28 @@
 package oop.ParkingExercise;
 
 import java.util.List;
+import java.util.Optional;
 
 import static java.util.function.Predicate.not;
 
 public class ParkingLotAssistant {
 
-    private List<ParkingLot> parkingLots;
-    public ParkingLotAssistant(List<ParkingLot> parkingLots) {
-     this.parkingLots = parkingLots;
-    }
+  private final List<ParkingLot> parkingLots;
 
-    public String park(String myCar) {
-        return parkingLots.stream()
-            .filter(not(ParkingLot::isFull))
-            .findFirst()
-            .map(parkingLot -> parkingLot.park(myCar) ? parkingLot.getName() : "Parkings are full!")
-            .get();
+  public ParkingLotAssistant(List<ParkingLot> parkingLots) {
+    this.parkingLots = parkingLots;
+  }
 
+  public String park(String myCar) {
+    Optional<ParkingLot> parkingLot = parkingLots.stream()
+        .filter(not(ParkingLot::isFull))
+        .findFirst();
+
+    if (parkingLot.isEmpty()) {
+      return "Parkings are full!";
     }
+    ParkingLot parking = parkingLot.get();
+    parking.park(myCar);
+    return parking.getName();
+  }
 }
