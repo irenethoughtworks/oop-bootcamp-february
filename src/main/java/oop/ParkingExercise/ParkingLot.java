@@ -1,12 +1,23 @@
 package oop.ParkingExercise;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ParkingLot {
 
-  public boolean park(Car car) {
-    return car.park();
+  private List<String> cars = new ArrayList();
+
+  public boolean park(String car) {
+    cars.add(car);
+    return true;
   }
 
-  public Car retrieveCar(Car car) {
+  public String retrieveCar(String car) {
+    cars.remove(car);
     return car;
+  }
+
+  public List<String> getParkedCars() {
+    return cars;
   }
 }
