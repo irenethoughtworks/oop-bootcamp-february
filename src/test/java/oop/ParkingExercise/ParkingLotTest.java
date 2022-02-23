@@ -1,18 +1,29 @@
 package oop.ParkingExercise;
 
-import static org.testng.Assert.assertTrue;
-
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 public class ParkingLotTest {
 
-  @Test
-  public void itShouldParkACarIfThereIsAnAvailableSpot() {
-    ParkingLot parkingLot = new ParkingLot();
-    Car car = new Car();
+    private Car car;
+    private ParkingLot parkingLot;
 
-    assertTrue(parkingLot.park(car));
+    @BeforeMethod
+    public void setUp() {
+        parkingLot = new ParkingLot();
+        car = new Car();
+    }
 
-  }
+    @Test
+    public void itShouldParkACarInTheParkingLot() {
+        assertTrue(parkingLot.park(car));
+    }
 
+    @Test
+    public void itShouldRetrieveMyCarFromTheParkingLot() {
+        assertEquals(parkingLot.retrieveCar(car), car);
+    }
 }
