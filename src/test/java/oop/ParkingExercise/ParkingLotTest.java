@@ -1,6 +1,7 @@
 package oop.ParkingExercise;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.BeforeMethod;
@@ -28,4 +29,9 @@ public class ParkingLotTest {
     assertEquals(parkingLot.retrieveCar(MY_CAR), MY_CAR);
     assertTrue(parkingLot.getParkedCars().isEmpty());
   }
+
+/*  @Test
+  public void itShouldNotParkMyCarIfTheParkingIsFull() {
+    assertFalse(parkingLot.park(MY_CAR));
+  }*/
 }

@@ -6,14 +6,20 @@ import java.util.List;
 public class ParkingLot {
 
   private List<String> cars;
+  private boolean isFull;
 
   public ParkingLot() {
     cars = new ArrayList<>();
+    isFull = false;
   }
 
   public boolean park(String car) {
-    cars.add(car);
-    return true;
+    if (isFull) {
+      return false;
+    } else {
+      cars.add(car);
+      return true;
+    }
   }
 
   public String retrieveCar(String car) {
