@@ -2,6 +2,8 @@ package oop.ParkingExercise;
 
 import java.util.List;
 
+import static java.util.function.Predicate.not;
+
 public class ParkingLotAssistant {
 
     private List<ParkingLot> parkingLots;
@@ -10,6 +12,11 @@ public class ParkingLotAssistant {
     }
 
     public String park(String myCar) {
-        return "Parking lot A";
+        return parkingLots.stream()
+            .filter(not(ParkingLot::isFull))
+            .findFirst()
+            .map(parkingLot -> parkingLot.park(myCar) ? parkingLot.getName() : "Parkings are full!")
+            .get();
+
     }
 }

@@ -5,14 +5,18 @@ import java.util.List;
 
 public class ParkingLot {
 
-  private final List<String> cars;
   private static final int MAX_CAPACITY = 3;
-  private boolean isFull = false;
+  private final List<String> cars;
+  public boolean isFull = false;
   private final String name;
 
   public ParkingLot(String name) {
     cars = new ArrayList<>();
     this.name = name;
+  }
+
+  public String getName() {
+    return name;
   }
 
   public boolean park(String car) {
@@ -37,5 +41,9 @@ public class ParkingLot {
 
   public List<String> getParkedCars() {
     return cars;
+  }
+
+  public boolean isFull() {
+    return isFull;
   }
 }
