@@ -30,7 +30,8 @@ public class ParkingLotAssistantTest {
 
   @Test
   public void itShouldOnlyParkACarIfParkingLotIsLessThan80PercentOfCapacity() {
-
+    ParkingLotAssistant parkingLotAssistant =
+        new ParkingLotAssistant(List.of(createFullParkingLot(PARKING_LOT_B), createAParkingLot(PARKING_LOT_A)));
     assertEquals(parkingLotAssistant.park(MY_CAR), PARKING_LOT_A);
 
 
@@ -39,6 +40,13 @@ public class ParkingLotAssistantTest {
   private ParkingLot createFullParkingLot(String name) {
     ParkingLot fullParkingLot = new ParkingLot(name);
     fullParkingLot.park(MY_CAR);
+    fullParkingLot.park(MY_CAR);
+    fullParkingLot.park(MY_CAR);
+    return fullParkingLot;
+  }
+
+  private ParkingLot createAParkingLot(String name) {
+    ParkingLot fullParkingLot = new ParkingLot(name);
     fullParkingLot.park(MY_CAR);
     fullParkingLot.park(MY_CAR);
     return fullParkingLot;

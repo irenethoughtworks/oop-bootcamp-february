@@ -42,8 +42,10 @@ public class ParkingLotTest {
 
   @Test
   public void itShouldReturnTheCapacity() {
+    ParkingLot parkingLot = new ParkingLot(PARKING_LOT);
+    parkingLot.park("car 1");
+    parkingLot.park("car 2");
 
-    assertEquals(parkingLot.getCapacity(), 0.75);
-
+    assertEquals(parkingLot.getCapacity(), 0.66, 2);
   }
 }
