@@ -25,6 +25,7 @@ public class ParkingLotAssistantTest {
     ParkingLotAssistant parkingLotAssistant = new ParkingLotAssistant(List.of(
         createFullParkingLot(PARKING_LOT_A), createFullParkingLot(PARKING_LOT_B)));
 
+    
     assertEquals(parkingLotAssistant.park(MY_CAR), "Parkings are full!");
   }
 
